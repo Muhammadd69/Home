@@ -65,28 +65,31 @@
         <div class="row">
             <div class="col-12">
                 <div class="property-slider-wrap">
+
                     <div class="property-slider">
+                        {% for i in homes%}
+
                         <div class="property-item">
                             <a href="property-single.html" class="img">
-                                <img src="../static/images/img_1.jpg" alt="Image" class="img-fluid"/>
+                                <img src="{{ i.image.url }}" alt="Image" class="img-fluid"/>
                             </a>
 
                             <div class="property-content">
-                                <div class="price mb-2"><span>$1,291,000</span></div>
+                                <div class="price mb-2"><span> {{ i.type }}{{ i.price }}</span></div>
                                 <div>
                       <span class="d-block mb-2 text-black-50"
-                      >5232 California Fake, Ave. 21BC</span
+                      >{{ i.sity }}</span
                       >
-                                    <span class="city d-block mb-3">California, USA</span>
+                                    <span class="city d-block mb-3">{{ i.location }}</span>
 
                                     <div class="specs d-flex mb-4">
                         <span class="d-block d-flex align-items-center me-3">
                           <span class="icon-bed me-2"></span>
-                          <span class="caption">2 beds</span>
+                          <span class="caption">{{ i.beds }} beds</span>
                         </span>
                                         <span class="d-block d-flex align-items-center">
                           <span class="icon-bath me-2"></span>
-                          <span class="caption">2 baths</span>
+                          <span class="caption">{{ i.baths }} baths</span>
                         </span>
                                     </div>
 
@@ -100,7 +103,10 @@
                         </div>
                         <!-- .item -->
                         <!-- .item -->
+                        {% endfor %}
+
                     </div>
+
 
                     <div
                             id="property-nav"
@@ -202,10 +208,11 @@
         </div>
         <div class="testimonial-slider-wrap">
             <div class="testimonial-slider">
+                {% for i in customers %}
                 <div class="item">
                     <div class="testimonial">
                         <img
-                                src="../static/images/person_1-min.jpg"
+                                src="{{ i.image.url }}"
                                 alt="Image"
                                 class="img-fluid rounded-circle w-25 mb-4"
                         />
@@ -216,99 +223,17 @@
                             <span class="icon-star text-warning"></span>
                             <span class="icon-star text-warning"></span>
                         </div>
-                        <h3 class="h5 text-primary mb-4">James Smith</h3>
+                        <h4>{{ i.reyting }}</h4>
+                        <h3 class="h5 text-primary mb-4">{{i.first_name}}</h3>
                         <blockquote>
                             <p>
-                                &ldquo;Far far away, behind the word mountains, far from the
-                                countries Vokalia and Consonantia, there live the blind
-                                texts. Separated they live in Bookmarksgrove right at the
-                                coast of the Semantics, a large language ocean.&rdquo;
+                                &ldquo;{{ i.descriptions }}&rdquo;
                             </p>
                         </blockquote>
-                        <p class="text-black-50">Designer, Co-founder</p>
+                        <p class="text-black-50">{{ i.job }}</p>
                     </div>
                 </div>
-
-                <div class="item">
-                    <div class="testimonial">
-                        <img
-                                src="../static/images/person_2-min.jpg"
-                                alt="Image"
-                                class="img-fluid rounded-circle w-25 mb-4"
-                        />
-                        <div class="rate">
-                            <span class="icon-star text-warning"></span>
-                            <span class="icon-star text-warning"></span>
-                            <span class="icon-star text-warning"></span>
-                            <span class="icon-star text-warning"></span>
-                            <span class="icon-star text-warning"></span>
-                        </div>
-                        <h3 class="h5 text-primary mb-4">Mike Houston</h3>
-                        <blockquote>
-                            <p>
-                                &ldquo;Far far away, behind the word mountains, far from the
-                                countries Vokalia and Consonantia, there live the blind
-                                texts. Separated they live in Bookmarksgrove right at the
-                                coast of the Semantics, a large language ocean.&rdquo;
-                            </p>
-                        </blockquote>
-                        <p class="text-black-50">Designer, Co-founder</p>
-                    </div>
-                </div>
-
-                <div class="item">
-                    <div class="testimonial">
-                        <img
-                                src="../static/images/person_3-min.jpg"
-                                alt="Image"
-                                class="img-fluid rounded-circle w-25 mb-4"
-                        />
-                        <div class="rate">
-                            <span class="icon-star text-warning"></span>
-                            <span class="icon-star text-warning"></span>
-                            <span class="icon-star text-warning"></span>
-                            <span class="icon-star text-warning"></span>
-                            <span class="icon-star text-warning"></span>
-                        </div>
-                        <h3 class="h5 text-primary mb-4">Cameron Webster</h3>
-                        <blockquote>
-                            <p>
-                                &ldquo;Far far away, behind the word mountains, far from the
-                                countries Vokalia and Consonantia, there live the blind
-                                texts. Separated they live in Bookmarksgrove right at the
-                                coast of the Semantics, a large language ocean.&rdquo;
-                            </p>
-                        </blockquote>
-                        <p class="text-black-50">Designer, Co-founder</p>
-                    </div>
-                </div>
-
-                <div class="item">
-                    <div class="testimonial">
-                        <img
-                                src="../static/images/person_4-min.jpg"
-                                alt="Image"
-                                class="img-fluid rounded-circle w-25 mb-4"
-                        />
-                        <div class="rate">
-                            <span class="icon-star text-warning"></span>
-                            <span class="icon-star text-warning"></span>
-                            <span class="icon-star text-warning"></span>
-                            <span class="icon-star text-warning"></span>
-                            <span class="icon-star text-warning"></span>
-                        </div>
-                        <h3 class="h5 text-primary mb-4">Dave Smith</h3>
-                        <blockquote>
-                            <p>
-                                &ldquo;Far far away, behind the word mountains, far from the
-                                countries Vokalia and Consonantia, there live the blind
-                                texts. Separated they live in Bookmarksgrove right at the
-                                coast of the Semantics, a large language ocean.&rdquo;
-                            </p>
-                        </blockquote>
-                        <p class="text-black-50">Designer, Co-founder</p>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </div>
@@ -460,108 +385,40 @@
             </div>
         </div>
         <div class="row">
+            {% for i in  agents %}
             <div class="col-sm-6 col-md-6 col-lg-4 mb-5 mb-lg-0">
                 <div class="h-100 person">
                     <img
-                            src="../static/images/person_1-min.jpg"
+                            src="{{i.image.url}}"
                             alt="Image"
                             class="img-fluid"
                     />
 
                     <div class="person-contents">
-                        <h2 class="mb-0"><a href="#">James Doe</a></h2>
-                        <span class="meta d-block mb-3">Real Estate Agent</span>
+                        <h2 class="mb-0"><a href="#">{{ i.first_name }}</a></h2>
+                        <span class="meta d-block mb-3">{{ i.job }}</span>
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Facere officiis inventore cumque tenetur laboriosam, minus
-                            culpa doloremque odio, neque molestias?
+                            {{i.descriptions}}
                         </p>
 
                         <ul class="social list-unstyled list-inline dark-hover">
                             <li class="list-inline-item">
-                                <a href="#"><span class="icon-twitter"></span></a>
+                                <a href="{{i.twitter}}"><span class="icon-twitter"></span></a>
                             </li>
                             <li class="list-inline-item">
-                                <a href="#"><span class="icon-facebook"></span></a>
+                                <a href="{{i.facebook}}"><span class="icon-facebook"></span></a>
                             </li>
                             <li class="list-inline-item">
-                                <a href="#"><span class="icon-linkedin"></span></a>
+                                <a href="{{i.linkedin}}"><span class="icon-linkedin"></span></a>
                             </li>
                             <li class="list-inline-item">
-                                <a href="#"><span class="icon-instagram"></span></a>
+                                <a href="{{i.instagram}}"><span class="icon-instagram"></span></a>
                             </li>
                         </ul>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-6 col-md-6 col-lg-4 mb-5 mb-lg-0">
-                <div class="h-100 person">
-                    <img
-                            src="../static/images/person_2-min.jpg"
-                            alt="Image"
-                            class="img-fluid"
-                    />
-
-                    <div class="person-contents">
-                        <h2 class="mb-0"><a href="#">Jean Smith</a></h2>
-                        <span class="meta d-block mb-3">Real Estate Agent</span>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Facere officiis inventore cumque tenetur laboriosam, minus
-                            culpa doloremque odio, neque molestias?
-                        </p>
-
-                        <ul class="social list-unstyled list-inline dark-hover">
-                            <li class="list-inline-item">
-                                <a href="#"><span class="icon-twitter"></span></a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#"><span class="icon-facebook"></span></a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#"><span class="icon-linkedin"></span></a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#"><span class="icon-instagram"></span></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-6 col-lg-4 mb-5 mb-lg-0">
-                <div class="h-100 person">
-                    <img
-                            src="../static/images/person_3-min.jpg"
-                            alt="Image"
-                            class="img-fluid"
-                    />
-
-                    <div class="person-contents">
-                        <h2 class="mb-0"><a href="#">Alicia Huston</a></h2>
-                        <span class="meta d-block mb-3">Real Estate Agent</span>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Facere officiis inventore cumque tenetur laboriosam, minus
-                            culpa doloremque odio, neque molestias?
-                        </p>
-
-                        <ul class="social list-unstyled list-inline dark-hover">
-                            <li class="list-inline-item">
-                                <a href="#"><span class="icon-twitter"></span></a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#"><span class="icon-facebook"></span></a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#"><span class="icon-linkedin"></span></a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#"><span class="icon-instagram"></span></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 </div>
